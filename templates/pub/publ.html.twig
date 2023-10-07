@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Registration Info{% endblock %}
+
+{% block body %}
+    <div class="main  bg-primary" style="padding: 60px;margin:0px;margin-top:-117px; margin-bottom: -117px">
+
+        <h1 class="mt-4">Registration Info</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-secondary btn-lg my-3">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Log in!{% endblock %}
+
+{% block body %}
+<div>
+    <div class="main  bg-primary" style="padding: 60px;margin:0px;margin-top:-127px; margin-bottom: -140px">
+
+        <section class="signup">
+            <div class="container">
+                <div class="signup-content">
+                    <a href="{{ path('app_home') }}"> <img src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="175" height="70" alt=""></a>
+                    <form method="POST" id="signup-form" class="signup-form">
+                        <h2 class="form-title">LOGIN</h2>
+    {% if error %}
+        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+    {% endif %}
+
+    {% if app.user %}
+        <div class="mb-3">
+            You are logged in as {{ app.user.nom }},{{ app.user.prenom}} <a href="{{ path('app_logout') }}">Logout</a>
+        </div>
+    {% endif %}
+
+
+    <label for="inputEmail">Email</label>
+    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control mb-2" autocomplete="email" required autofocus>
+    <label for="inputPassword">Password</label>
+    <input type="password" name="password" id="inputPassword" class="form-control mb-2" autocomplete="current-password" required>
+
+    <input type="hidden" name="_csrf_token"
+           value="{{ csrf_token('authenticate') }}"
+    >
+
+    {#
+        Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
+        See https://symfony.com/doc/current/security/remember_me.html
+
+        <div class="checkbox mb-3">
+            <label>
+                <input type="checkbox" name="_remember_me"> Remember me
+            </label>
+        </div>
+    #}
+
+    <button class="btn btn-lg btn-primary" type="submit">
+        Sign in
+    </button>
+                    </form>
+                    <p class="loginhere">
+                        Have already an account ? <a href="{{ path('app_login') }}" class="loginhere-link">Login here</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+{% endblock %}

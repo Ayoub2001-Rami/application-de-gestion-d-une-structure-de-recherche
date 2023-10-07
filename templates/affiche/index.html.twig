@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Publication</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+
+    <!-- Template Main CSS File -->
+    <link href="assets1/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header id="header" class="fixed-top ">
+    <div class="container  d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="#">SUJET DE THESE</a></h1>
+        <nav id="navbar" class="navbar">
+            <a class="navbar-brand " href="#">
+                <img  src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="120" height="80" alt="">
+            </a>
+            <ul>
+                <li><a class="nav-link scrollto active" href="{{ path('app_home') }}">Home</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+<!-- ======= Frequently Asked Questions Section ======= -->
+<section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+            <h2>VOTRE SUJET DE THESE</h2>
+        </div>
+
+        {% for s in sujet %}
+            <div class="faq-list">
+                <ul>
+                    <li data-aos="" data-aos-delay="100">
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="">_Titre  :{{ s.titre }}</a>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="">_Coencadrant  :{{ s.coencadrant }}</a>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="">_Encadrant  :{{ s.encadrant }}</a>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target=""> _Bourse  :{{ s.bourse }}</i></a>
+                        <a data-bs-toggle="collapse" class="collapse" data-bs-target="">_Annee :{{ s.annee|date('Y/M/D')}}</a>
+                        <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                            <p>
+{#<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i> #}
+                            <hr>
+                            {{ s.description }}
+                         </p><hr>
+                            <div class="bi-file-earmark-pdf">{{ s.pdf }}</div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        {% endfor %}
+
+    </div>
+</section><!-- End Frequently Asked Questions Section -->
+<!-- Vendor JS Files -->
+<script src="assets1/vendor/aos/aos.js"></script>
+<script src="assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- Template Main JS File -->
+<script src="assets1/js/main.js"></script>
+
+</body>
+
+</html>

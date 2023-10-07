@@ -1,0 +1,44 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}Equipe{% endblock %}
+
+{% block main %}
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+        <title>Profile</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!-- FORM-->
+        <link rel="shortcut icon" href="{{ asset('assets/img/img1.jpg') }}">
+        <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- -->
+
+        <!--select2 -->
+        <link href="{{ asset('node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+        <!-- -->
+
+       </head>
+    <div class="alert-secondary " style="margin-top: -8px; margin-bottom: 0px ">
+    <div class="container alert-secondary">
+        <h1 class="mt-4" style="padding-left: 390px">AJOUT EQUIPE</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary btn-lg my-3">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+      <!--select2 -->
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('node_modules/select2/dist/js/select2.min.js') }}"></script>
+    <!--select2 -->
+{% endblock %}
+  {% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'admin/index.html.twig' %}
+
+{% block title %}EVENT{% endblock %}
+
+{% block main %}
+        <div class="alert-secondary">
+        <div style="padding: 38px; margin-bottom: 0px ;margin-top: -22px">
+<div class="container">
+        <h1 class="mt-4" style="margin-top: -122px;margin-left: 350px">AJOUT EVENEMENT</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary btn-lg my-3">Envoyer</button>
+        {{ form_end(form) }}
+</div>
+</div>
+</div>
+{% endblock %}

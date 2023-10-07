@@ -1,0 +1,46 @@
+{% block section %}
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Profile</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!--NAVBAR -->
+        <!-- -->
+        <!-- FORM-->
+        <link rel="shortcut icon" href="{{ asset('assets/img/img1.jpg') }}">
+        <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- -->
+    </head>
+    <div class="alert-secondary" >
+    <div class="container " style="margin-top: -27px;margin-bottom:-60px; ">
+    <a class="navbar-brand" href="{{ path('app_profdoct') }}">
+        <img style="margin-top: 20px; margin-bottom: -58px;margin-left: -113px" src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="120" height="100" alt="">
+    </a>
+    <div class="main  alert-secondary" >
+        <br>
+        <h1 class="mt-4" style="padding-left: 400px;margin-top: 100px">EDITE PROFILE</h1>
+        {{ form_start(edit_form) }}
+        {{ form_row(edit_form.nom) }}
+        {{ form_row(edit_form.prenom) }}
+        {{ form_row(edit_form.Specialite) }}
+        {{ form_row(edit_form.Introduction) }}
+        {{ form_row(edit_form.Etablissement) }}
+        {{ form_row(edit_form.email) }}
+        {{ form_row(edit_form.Phone) }}
+        {{ form_row(edit_form.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(edit_form.newPassword, {
+            label: 'NewPassword'
+        }) }}
+        {{ form_row(edit_form.photo) }}
+        {{ form_end(edit_form) }}
+
+
+    </div>
+
+
+
+
+{% endblock %}

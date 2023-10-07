@@ -1,0 +1,49 @@
+{% block section %}
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Profile</title>
+        <meta content="" name="description">
+        <meta content="" name="keywords">
+        <!--NAVBAR -->
+        <!-- -->
+        <!-- FORM-->
+        <link rel="shortcut icon" href="{{ asset('assets/img/img1.jpg') }}">
+        <link href="{{ asset('assets2/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+        <!-- -->
+
+        <!--select2 -->
+        <link href="{{ asset('node_modules/select2/dist/css/select2.min.css') }}" rel="stylesheet">
+        <!-- -->
+
+    </head>
+    <div class="alert-secondary" >
+        <div class="container " style="margin-top: -27px;margin-bottom:-60px; ">
+            <a class="navbar-brand" href="{{ path('app_prof') }}">
+                <img style="margin-top: 20px;margin-bottom: -48px;margin-left: -113px" src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="120" height="100" alt="">
+            </a>
+            <div class="main  alert-secondary" >
+                <br>
+                <h1 class="mt-4" style="padding-left: 300px;margin-top: 100px">AJOUTE SUJET DE THESE</h1>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+
+                <a href="">  <button type="submit" class="btn btn-primary btn-lg my-3">Envoyer</button></a>
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+    <!--select2 -->
+    <script src="{{ asset('assets/js/scripts.js') }}"></script>
+    <script src="{{ asset('node_modules/jquery/dist/jquery.min.js') }}"></script>
+    <script src="{{ asset('node_modules/select2/dist/js/select2.min.js') }}"></script>
+    <!--select2 -->
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            $('.select2').select2();
+        });
+    </script>
+{% endblock %}

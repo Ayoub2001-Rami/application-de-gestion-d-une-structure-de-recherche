@@ -1,0 +1,223 @@
+{#<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>SUJET DE THESE</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+
+    <!-- affichage sujet de recherche  -->
+
+    <link href="profil/css/mdb.min.css?ver=1.2.1" rel="stylesheet">
+    <link href="profil/css/main.css?ver=1.2.1" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+
+    <!-- Template Main CSS File -->
+    <link href="assets1/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header style="margin-top: -30px" id="header" class="fixed-top ">
+    <div class="container  d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="#faq">SUJET DE THESE</a></h1>
+        <nav id="navbar" class="navbar">
+            <a class="navbar-brand " href="#">
+                <!--img src="{{ asset('') }}" width="80" height="80" alt=""-->
+                <img  src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="120" height="80" alt="">
+            </a>
+            <ul>
+                <li><a class="nav-link scrollto active" href="{{ path('app_home') }}">Home</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->#}
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>PROJET DE RECHERCHE</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+
+    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+
+    <!-- affichage projet de recherche  -->
+
+    <link href="profil/css/mdb.min.css?ver=1.2.1" rel="stylesheet">
+    <link href="profil/css/main.css?ver=1.2.1" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+
+
+    <!-- Template Main CSS File -->
+    <link href="assets1/css/style.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+
+<!-- ======= Header ======= -->
+<header  id="header" class="fixed-top ">
+    <div class="container  d-flex align-items-center">
+
+        <h1 class="logo me-auto"><a href="#faq">SUJET DE THESE</a></h1>
+        <nav id="navbar" class="navbar">
+             <ul >
+                <form class="d-flex" method="post" action="{{ path('app_sujthese1') }}">
+                    <input class="form-control me-2" type="search"  placeholder="Search" aria-label="Search" name='year'>
+                    <input type="submit" class="alert-success" value="Search">
+                </form>
+            </ul>
+            <ul>
+                <li><a class="nav-link scrollto active" href="{{ path('app_home') }}">Home</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+
+
+
+<!-- ======= Frequently Asked Questions Section ======= -->
+<section id="faq" class="faq section-bg">
+    <div class="container" data-aos="fade-up">
+
+   {#     <div class="section-title">
+            <h2>about page</h2>
+            <p>
+                On these pages you will find Springer’s journals, books and eBooks in all areas of Business and Management, serving researchers, professionals, lecturers and students. We publish many of the most prestigious journals in Business and Management, including a number of fully open access journals. Our book and eBook portfolio comprises major reference works, textbooks, and monographs from the world’s most distinguished authors. Well-known publications include: Springer Texts in Business and Economics, the Encyclopedia of Operations Research and Management Science, and the Journal of the Academy of Marketing Science.
+            </p>
+        </div>#}
+
+        {#{% for st in sujthese  %}
+                <div class="faq-list">
+                    <ul>
+                        <li data-aos="fade-up" data-aos-delay="100">
+                            <a data-bs-toggle="collapse" class="collapse" data-bs-target="#faq-list-1">{{ st.titre }}<i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
+                            <div id="faq-list-1" class="collapse show" data-bs-parent=".faq-list">
+                                <h5 >annee de projet :{{ st.annee |date('y') }}</h5>
+                                <h4>bourse : {{ st.bourse }}</h4><hr>
+                                <h4>L'encadrant : {{ st.encadrant }}</h4>
+                                <h4>coencadrant : {{ st.doctorant }}</h4>
+                                <h4>coencadrant : {{ st.prAssocie }}</h4>
+                                <p>{{ st.description }}</p>
+                                <a  class="bi-file-pdf" href="{{ asset('uploads/pdf/sujetThese/') }}{{ st.pdf }}">
+                                    <p class=" icon-holder" >voir le journal --></p>
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+            {% endfor %}#}
+
+
+
+        <div style="margin-bottom: 32px ;margin-top:8%" id="PR">
+            <div class="row" >
+                <div class="col-sm-12">
+                    <div class="card-body">
+                        <ul class="nav nav-tabs">
+                            <li>
+                                <a class="nav-link active text-uppercase " aria-selected="true">SUJET DE THESE</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="shadow-3-strong bg-white my-2 p-5">
+                <div class="">
+                    <div class="row">
+                        <div class="col-md">
+
+                            {% for s in sujthese %}
+                                <div class="timeline">
+                                    <div class="timeline-card timeline-card-primary card shadow-sm">
+                                        <div class="card-body">
+                                            <div class="h5 mb-2">{{ s.titre }}
+                                                <br>
+                                                <div class="mt-2">
+                                                    <span class="text-muted h6">{{ s.doctorant }} &&</span>
+                                                    <span class="text-muted  h6">{{ s.encadrant}} </span>
+                                                    <span class="text-muted  h6"> && {{ s.coencadrant }}</span>
+                                                </div>
+
+                                                <span class="text-muted  h6">{{ s.bourse }}</span>
+                                            </div>
+                                            <div class="text-muted text-small mb-2 "> {{ s.annee | date('Y')}} </div>
+                                            <div>{{ s.description}}</div>
+                                            <a   class=" bi-file-pdf" href="{{ asset("uploads/pdf/sujetThese/")}}{{ s.pdf}}">
+                                                {#<img src="{{ asset('o.png') }}" alt="">#}
+                                                <p class="icon-3d_rotation " >DOWNLOAD</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+</section><!-- End Frequently Asked Questions Section -->
+
+<!-- Vendor JS Files -->
+<script src="assets1/vendor/aos/aos.js"></script>
+<script src="assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- Template Main JS File -->
+<script src="assets1/js/main.js"></script>
+
+</body>
+
+</html>

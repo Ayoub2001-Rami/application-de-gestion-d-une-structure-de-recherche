@@ -1,0 +1,29 @@
+{% extends 'admin/index.html.twig' %}
+{% block title %}Register{% endblock %}
+
+{% block main %}
+<div class="alert-secondary">
+<div class=" " style="margin: 30px;">
+    <h1 class="mt-4 " style="padding-left: 440px">Register</h1>
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.nom) }}
+        {{ form_row(registrationForm.prenom) }}
+        {{ form_row(registrationForm.Specialite) }}
+        {{ form_row(registrationForm.Introduction) }}
+        {{ form_row(registrationForm.Etablissement) }}
+        {{ form_row(registrationForm.Type) }}
+        {{ form_row(registrationForm.Phone) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.photo) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+       
+
+
+        <button href="{{ path('app_register') }}" type="submit" class="btn btn-primary btn-lg my-3">Register</button>
+    {{ form_end(registrationForm) }}
+</div>
+</div>
+{% endblock %}

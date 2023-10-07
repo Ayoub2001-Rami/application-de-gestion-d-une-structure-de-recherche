@@ -1,0 +1,36 @@
+{% extends 'admin/index.html.twig' %}
+
+    {% block main %}
+
+        <div style="padding: 0px; padding-top: 0px">
+            <table class="table  table-striped custom-table table-hover">
+                <thead >
+                <tr class="bg-secondary">
+                    <th scope="col">Nom</th>
+                    <th scope="col">Prenom</th>
+                    <th scope="col">Specialite</th>
+                    <th scope="col">email</th>
+                    <th scope="col">Phone</th>
+                </tr>
+                </thead >
+                {% for m in Membres%}
+                  <div>
+                    <tr class="py-1" style="border-block-color: cadetblue; ">
+                        <td >{{ m.nom }}</td>
+                        <td>{{ m.prenom }}</td>
+                        <td>{{ m.specialite }}</td>
+                        <td>{{ m.email }}</td>
+                        <td>{{ m.phone }}</td>
+                    </tr>
+                   </div>
+                {% endfor %}
+            </table>
+        </div>
+
+    {% endblock %}
+
+
+{% block title %}
+
+{% endblock %}
+

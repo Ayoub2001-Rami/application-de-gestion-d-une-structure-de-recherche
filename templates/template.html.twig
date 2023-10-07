@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Structure de Recherche</title>
+    <!-- Font Awesome icons (free version)-->
+    <script src="{{ asset('https://use.fontawesome.com/releases/v6.1.0/js/all.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}" crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ asset('assets/css/styles.css') }}" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ asset('evenement/assets/scss/bootstrap/scss/_dropdown.scss') }}"  />
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}"  />
+
+    <link rel="shortcut icon" href="{{ asset('assets/img/img1.jpg') }}">
+</head>
+
+<div class="has-bg-img bg-purple bg-blend-multiply">
+
+    <img class="bg-img" src="{{ asset('assets/img/FSA.jpg') }}" alt="..." width="1348" height="656">
+
+
+</div>
+
+<body id="page-to">
+<header class="header fixed-top m " >
+    <div class="branding ">
+        <div class="container-fluid alert-secondary">
+            <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+                <a class="navbar-brand" href="">
+                    <!--img src="{{ asset('assets/img/images.jpg') }}" width="80" height="80" alt=""-->
+                    <img style="margin-top: -22px;margin-bottom: -5px" src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="110" height="70" alt="">
+                </a>
+                <div class="container px-4 px-lg-5">
+
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent ">
+                        <ul class="navbar-nav ms-auto">
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Laboratoire
+                                </a>
+                                <ul class="dropdown-menu alert-secondary" aria-labelledby="navbarDropdown">
+                                  {#  {% for l in labo %}
+                                        <li><a class="dropdown-item" href=""></a></li>
+                                    {% endfor %}#}
+                                    <li><a class="dropdown-item alert-secondary" href="{{ path('app_labo') }}">IRF-SIC</a></li>
+                                </ul>
+                            </li>
+
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    PROJET
+                                </a>
+                                <ul class="dropdown-menu alert-secondary" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item alert-secondary" href="{{ path('app_prech') }}">PROJET DE RECHERCHE </a></li>
+                                    <li><a class="dropdown-item alert-secondary" href="{{ path('app_sujrech') }}">SUJET DE RECHERCHE </a></li>
+                                    <li><a class="dropdown-item alert-secondary" href="{{ path('app_sujthese') }}">SUJET DE THESE  </a></li>
+                                </ul>
+
+                            <li class="nav-item  "><a class="nav-link" href="{{path('app_event')}}">Evenement</a></li>
+                            <li class="nav-item "><a class="nav-link" href="{{ path('app_pub') }}">Publication</a></li>
+                            <li class="nav-item "><a class="btn"  href="{{path('app_login')}}">Login</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div><!--//container-->
+    </div><!--//branding-->
+</header><!--//header-->
+<!--
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-8 col-centered">
+            <div class="maintxt">
+                <img src="background.png" class="img-responsive">
+            </div>
+        </div>
+    </div>
+</div>
+-->
+
+
+
+<!--<header class="">
+    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+        <div class="d-flex justify-content-center">
+            <div class="text-center">
+                <h1 class="mx-auto my-0 text-uppercase">Grayscale</h1>
+                <h2 class="text-white-50 mx-auto mt-2 mb-5">A free, responsive, one page Bootstrap theme created by Start Bootstrap.</h2>
+                <a class="btn btn-primary" href="#">Get Started</a>
+            </div>
+        </div>
+    </div>
+ Masthead-->
+</header>
+</body>
+</html>

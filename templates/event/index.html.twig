@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Evenement</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Bootstrap 5 Tech Conference Template">
+    <meta name="author" content="Xiaoying Riley at 3rd Wave Media">
+
+
+    <!-- header  css-->
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <link href="assets1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets1/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="assets1/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="assets1/css/style.css" rel="stylesheet">
+    <!-- header -->
+
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800|Roboto:300,400,700&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome JS-->
+    <script defer src="{{ asset('evenement/assets/fontawesome/js/all.js') }}"></script>
+
+    <!-- Theme CSS -->
+    <link id="theme-style" rel="stylesheet" href="{{ asset('evenement/assets/css/theme.css') }}">
+</head>
+<header id="header" class="fixed-top ">
+    <div style="margin-top: -20px" class="container  d-flex align-items-center">
+            <h1 class="logo me-auto " style="margin-left: 300px"><a href="#">Tous les Evenement</a></h1>
+        <nav id="navbar " class="navbar navbar-expand-lg navbar-light   ">
+
+
+            <ul >
+                <form class="d-flex" method="post" action="{{ path('app_event1') }}">
+                    <input class="form-control me-2" type="search"  placeholder="Search" aria-label="Search" name="year">
+                    <input type="submit" class="alert-success" value="Search">
+                </form>
+            </ul>
+
+
+            <a class="navbar-brand " href="#">
+                <!--img src="{{ asset('assets/img/images.jpg') }}" width="80" height="80" alt=""-->
+                <img style="margin-left: -1140px;margin-top: -20px" src="{{ asset('assets/img/Logo-UIZ.jpg') }}" width="120" height="90" alt="">
+            </a>
+            <ul>
+                <li><a class="nav-link scrollto active" href="{{ path('app_home') }}">Home</a></li>
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+
+        </nav><!-- .navbar -->
+
+    </div>
+</header><!-- End Header -->
+<body>
+<div style="margin-top: 100px">
+{% for event in E %}
+    <div class="container ">
+        <div class="schedule-tab-content tab-content mb-6">
+            <div class="tab-pane active" id="" role="tabpanel" aria-labelledby="tab-1">
+                <div class="item item-talk">
+                    <div class="item item-talk">
+                        <div class="meta">
+                            <h4 class="time mb-3">{{ event.date | date('y/m/d H:i') }}</h4>
+                              <img class="card-img " src="{{ asset("upload/event/")}}{{ event.image }}" height="200" alt="" >
+                        </div><!--//meta-->
+                        <div class="content mb-6">
+                            <h3 class="title mb-3">{{ event.titre }}</h3>
+                            <div class="location mb-3"><i class="fas fa-map-marker-alt me-2"></i>{{ event.lieu }}</div>
+                            <div class="mb-6"><strong>{{ event.description }}</strong></div>
+                        </div><!--//content-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+</div>
+
+
+
+
+<!--
+<div id="hero-block" class="hero-block">
+    <div id="hero-carousel" class="hero-carousel carousel slide carousel-fade" data-ride="carousel">
+    </div>
+    <div class="hero-block-mask"></div>
+    <div class="container">
+        <div class="hero-text-block">
+            <h1 class="hero-heading ">DevConf 2024</h1>
+            <div class="hero-meta mb-3"><i class="far fa-calendar-alt me-2"></i>12 - 15 Oct <i class="fas fa-map-marker-alt mx-2"></i>New York, USA</div>
+            <div class="hero-intro mb-4">The #1 Bootstrap 4 Template for <br>Tech Conferences and Events.</div>
+            <div class="hero-cta"></div>
+            <div class="container position-right">
+                <h3 class="section-heading text-center mb-3">About DevConf</h3>
+                <div class="section-intro single-col-max mx-auto mb-4">Briefly introduce your conference or event here. You should convince people why they should attend with a list of benefits. <strong>Are you a conference organizer? Want to source developer t-shirts as part of your conference package?</strong> Check out our programming tees at <a href="https://made4dev.com/" target="_blank">made4dev.com</a> - developers love them! Want to get a bulk discount or just want to use one of the t-shirt designs? Please email <a href="mailto:hello@made4dev.com">hello@made4dev.com</a> and we can discuss.</div>
+            </div>
+        </div>!--//hero-text-block--
+    </div>!--//container--
+</div>!--//hero-block-->
+<!-- Vendor JS Files -->
+<script src="assets1/vendor/aos/aos.js"></script>
+<script src="assets1/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+
+
+<!-- Template Main JS File -->
+<script src="assets1/js/main.js"></script>
+
+
+</body>
+</html>
+

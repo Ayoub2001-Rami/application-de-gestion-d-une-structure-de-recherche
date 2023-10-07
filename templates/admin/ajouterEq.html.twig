@@ -1,0 +1,15 @@
+{% extends 'admin/index.html.twig' %}
+{% block title %}EQUIPEMENT{% endblock %}
+{% block main %}
+    <div class="alert-secondary">
+    <div style="padding: 38px; margin-bottom: -40px ">
+        <h1 STYLE="margin-left:300px">AJOUT EQUIPEMENT</h1>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+
+        <button type="submit" class="btn btn-primary btn-lg my-3">Envoyer</button>
+        {{ form_end(form) }}
+    </div>
+    </div>
+
+{% endblock %}
